@@ -1,55 +1,13 @@
-<!doctype html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Duncan's Just-In-Time Donuts</title>
-
+    <title>iRock - The Virtual Pet Rock</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="frame">
-      <h1>Duncan's Just-In-Time Donuts</h1>
-      <p>
-        Welcome to Duncan's Just-In-Time Donuts! We serve fresh, delicious
-        donuts made to order. Our menu includes a variety of flavors and
-        toppings to satisfy every craving. Whether you're in the mood for a
-        classic glazed donut or something more adventurous, we've got you
-        covered. Stop by and treat yourself to a sweet delight today!
-      </p>
-
-      <form name="orderform" id="orderform">
-        <div class="field">
-          <label for="cake">Qty of Cake Donuts:</label>
-          <input type="number" name="cake" id="cake" value="0" min="0" />
-        </div>
-        <div class="field">
-          <label for="glazed">Qty of Glazed Donuts:</label>
-          <input type="number" name="glazed" id="glazed" value="0" min="0" />
-        </div>
-        <div class="field">
-          <label for="subtotal">Your Order Subtotal:</label>
-          <input
-            type="text"
-            name="subtotal"
-            id="subtotal"
-            value="$0.00"
-            readonly
-          />
-        </div>
-        <div class="field">
-          <label for="tax">Tax:</label>
-          <input type="text" name="tax" id="tax" value="$0.00" readonly />
-        </div>
-        <div class="field">
-          <label for="total">Your Order Total:</label>
-          <input type="text" name="total" id="total" value="$0.00" readonly />
-        </div>
-        <div class="field">
-          <input type="button" id="calculate" value="Calculate Total" />
-        </div>
-      </form>
-    </div>
     <script src="script.js"></script>
+  </head>
+
+  <body onload="greetUser()">
+    <div class="rock-container">
+      <img id="rockImg" src="rock.png" alt="iRock" onclick="touchRock()" />
+    </div>
   </body>
 </html>

@@ -1,20 +1,18 @@
-function updateOrder() {
-  const TAXRATE = 0.07;
-  const DONUTPRICE = 1.5;
-  let numCakeDonuts = Number(document.getElementById('cake').value);
-  let numGlazedDonuts = Number(document.getElementById('glazed').value);
+var userName;
 
-  let subtotal = numCakeDonuts * DONUTPRICE + numGlazedDonuts * DONUTPRICE;
-  let tax = subtotal * TAXRATE;
-  let total = subtotal + tax;
-
-  document.getElementById('subtotal').value = formatCurrency(subtotal);
-  document.getElementById('tax').value = formatCurrency(tax);
-  document.getElementById('total').value = formatCurrency(total);
+function greetUser() {
+  alert('Hello, I am your pet rock.');
 }
 
-function formatCurrency(amount) {
-  return '$' + amount.toFixed(2);
+function touchRock() {
+  if (userName) {
+    alert('I like the attention, ' + userName + '. Thank you.');
+  } else {
+    userName = prompt('What is your name?', 'Enter your name here.');
+    if (userName) alert('It is good to meet you, ' + userName + '.');
+  }
+  document.getElementById('rockImg').src = 'rock_happy.png';
+  setTimeout(function () {
+    document.getElementById('rockImg').src = 'rock.png';
+  }, 5 * 60 * 1000);
 }
-
-document.getElementById('calculate').addEventListener('click', updateOrder);
