@@ -20,6 +20,14 @@ function touchRock() {
     function () {
       document.getElementById('rockImg').src = 'rock.png';
     },
-    5 * 60 * 1000,
+    3 * 60 * 1000,
   );
 }
+
+function resizeRock() {
+  const rockImg = document.getElementById('rockImg');
+  rockImg.style.width = '200px';
+  rockImg.style.height = '200px';
+}
+
+resizeRock();
