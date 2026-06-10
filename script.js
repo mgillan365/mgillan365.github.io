@@ -25,7 +25,7 @@ function touchRock() {
 }
 
 function resizeRock() {
-  document.getElementById('rockImg');
+  const rockImg = document.getElementById('rockImg');
   rockImg.style.height = (document.body.clientHeight - 100) * 0.9 + 'px';
 }
 
