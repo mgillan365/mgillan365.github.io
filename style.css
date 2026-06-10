@@ -5,4 +5,6 @@
 
 #rockImg {
   cursor: pointer;
+  max-height: calc((100vh - 100px) * 0.9);
+  max-width: 90vw;
 }
