@@ -3,14 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iRock - The Virtual Pet Rock</title>
+    <title>My ToDo List</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
   </head>
-
   <body>
-    <div class="rock-container">
-      <img id="rockImg" src="rock.png" alt="iRock" />
+    <h1>My ToDo List</h1>
+    <h3>What do you need to do today?</h3>
+
+    <div class="todo-input-row">
+      <input id="todo-input" type="text" placeholder="Add a task" />
+      <button id="add-btn">Add</button>
     </div>
+
+    <ul id="todo-list"></ul>
+    <script src="script2.js"></script>
   </body>
 </html>

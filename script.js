@@ -1,35 +1,55 @@
-const rockImg = document.querySelector('#rockImg');
-const defaultRock = 'rock.png';
-const happyRock = 'rock_happy.png';
-const rockResetDelay = 3 * 60 * 1000;
+// todo list
+const input = document.getElementById('todo-input');
+const button = document.getElementById('add-btn');
+const list = document.getElementById('todo-list');
+const savedTodos = JSON.parse(localStorage.getItem('todos')) || [];
 
-let userName = '';
-let resetTimerId;
+button.addEventListener('click', addTodo);
 
-const greetUser = () => {
-  alert('Hello, I am your pet rock.');
-};
+input.addEventListener('keypress', function (event) {
+  if (event.key === 'Enter') {
+    addTodo();
+  }
+});
 
-const resetRock = () => {
-  rockImg.src = defaultRock;
-};
+savedTodos.forEach(function (todoText) {
+  createTodo(todoText);
+});
 
-const touchRock = () => {
-  if (userName) {
-    alert(`I like the attention, ${userName}. Thank you.`);
-  } else {
-    userName = prompt('What is your name?', 'Enter your name here.');
-
-    if (userName) {
-      alert(`It is good to meet you, ${userName}.`);
-    }
+function addTodo() {
+  const text = input.value.trim();
+  if (text === '') {
+    alert('Please enter a todo item.');
+    return;
   }
 
-  rockImg.src = happyRock;
+  createTodo(text);
+  saveTodos();
+  input.value = '';
+}
 
-  clearTimeout(resetTimerId);
-  resetTimerId = setTimeout(resetRock, rockResetDelay);
-};
+function createTodo(text) {
+  const li = document.createElement('li');
+  li.textContent = text;
 
-rockImg.addEventListener('click', touchRock);
-window.addEventListener('load', greetUser);
+  const del = document.createElement('button');
+  del.textContent = 'Delete';
+  del.className = 'delete-btn';
+  del.addEventListener('click', function () {
+    list.removeChild(li);
+    saveTodos();
+  });
+  li.appendChild(del);
+
+  list.appendChild(li);
+}
+
+function saveTodos() {
+  const todos = [];
+
+  document.querySelectorAll('#todo-list li').forEach(function (li) {
+    todos.push(li.firstChild.textContent);
+  });
+
+  localStorage.setItem('todos', JSON.stringify(todos));
+}

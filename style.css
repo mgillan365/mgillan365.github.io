@@ -1,10 +1,55 @@
-.rock-container {
-  margin-top: 100px;
+body {
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+h1,
+h3 {
   text-align: center;
 }
 
-#rockImg {
+.todo-input-row {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+#todo-input {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#add-btn {
+  padding: 10px 15px;
   cursor: pointer;
-  height: auto;
-  width: min(90vw, calc((100vh - 100px) * 0.9 * 227 / 190));
+}
+
+#add-btn:hover {
+  background-color: lightgreen;
+  border: none;
+  border-radius: 3px;
+}
+
+#todo-list {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  background-color: #f0f0f0;
+  margin-top: 10px;
+  list-style: none;
+}
+
+.delete-btn {
+  float: right;
+  cursor: pointer;
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
 }
