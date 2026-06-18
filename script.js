@@ -30,7 +30,11 @@ function addTodo() {
 
 function createTodo(text) {
   const li = document.createElement('li');
-  li.textContent = text;
+
+  const taskText = document.createElement('span');
+  taskText.className = 'todo-text';
+  taskText.textContent = text;
+  li.appendChild(taskText);
 
   const del = document.createElement('button');
   del.textContent = 'Delete';
