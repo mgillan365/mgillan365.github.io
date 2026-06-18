@@ -53,3 +53,5 @@ function saveTodos() {
 
   localStorage.setItem('todos', JSON.stringify(todos));
 }
+
+// theme toggle
